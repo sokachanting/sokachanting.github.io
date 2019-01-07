@@ -5,11 +5,7 @@
 <script>
     var sound = new Howl({
       src: ['chanting.mp3']
-    });
-new RabbitLyrics({
-  element: document.findElementById("lyrics-1"),
-  mediaElement: sound
-});    
+    });  
 </script>
 </head>
 <body>
@@ -27,5 +23,12 @@ new RabbitLyrics({
 [00:05.00] This is a little song
 [00:07.00] The song that nobody knows
 </div>
+    
+<script> 
+new RabbitLyrics({
+  element: document.findElementById("lyrics-1"),
+  mediaElement: sound
+});  
+</script>
 </body>
 </html>
