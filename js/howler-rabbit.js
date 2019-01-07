@@ -1,3 +1,4 @@
+this.lineElements = [];
 function   decodeTimeStamp(timestamp) {
     if (!timestamp || typeof timestamp !== "string") return 0;
 
