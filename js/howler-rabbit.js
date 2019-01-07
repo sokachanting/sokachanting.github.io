@@ -204,11 +204,11 @@ export default class RabbitLyrics {
     // Bind playback update events
     this.mediaElement.ontimeupdate = this.synchronize;
 
-    this.mediaElement.onplay = this.setStatus;
-    this.mediaElement.onplaying = this.setStatus;
-    this.mediaElement.onpause = this.setStatus;
-    this.mediaElement.onwaiting = this.setStatus;
-    this.mediaElement.onended = this.setStatus;
+    this.mediaElement.on(play,this.setStatus);
+    // this.mediaElement.onplaying = this.setStatus;
+    this.mediaElement.on(pause,this.setStatus);
+    //this.mediaElement.onwaiting = this.setStatus;
+    this.mediaElement.on(end,this.setStatus);
 
     // Add enabled status class. Avoid initializing the same element twice
     this.element.classList.add("rabbit-lyrics--enabled");
