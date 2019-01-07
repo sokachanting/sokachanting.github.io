@@ -71,3 +71,47 @@
 
     return this;
   }
+
+
+  function synchronize(_inTime) {
+    let time = _inTime;
+    let changed = false; // If here are active lines changed
+    let activeLineElements = [];
+
+    this.lineElements.forEach(element => {
+      if (time >= element.dataset.start && time <= element.dataset.end) {
+        // If line should be active
+        if (!element.classList.contains("rabbit-lyrics__line--active")) {
+          // If it hasn't been activated
+          changed = true;
+          element.classList.add("rabbit-lyrics__line--active");
+        }
+        activeLineElements.push(element);
+      } else {
+        // If line should be inactive
+        if (element.classList.contains("rabbit-lyrics__line--active")) {
+          // If it hasn't been deactivated
+          changed = true;
+          element.classList.remove("rabbit-lyrics__line--active");
+        }
+      }
+    });
+
+    if (changed && activeLineElements.length > 0) {
+      // Calculate scroll top. Vertically align active lines in middle
+      let activeLinesOffsetTop =
+        (activeLineElements[0].offsetTop +
+          activeLineElements[activeLineElements.length - 1].offsetTop +
+          activeLineElements[activeLineElements.length - 1].offsetHeight) /
+        2;
+      this.scrollTop = activeLinesOffsetTop - this.element.clientHeight / 2;
+
+      // Start scrolling animation
+      clearInterval(this.scrollerInterval);
+      this.scrollerTimer = this.scrollerIntervalDuration;
+      this.scrollerInterval = setInterval(
+        this.scroll,
+        this.scrollerIntervalStep
+      );
+    }
+  }
