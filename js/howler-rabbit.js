@@ -10,7 +10,7 @@
  * Report bugs: https://gitlab.com/guoyunhe/rabbit-lyrics/issues
  */
 
-import "./howler-rabbit.css";
+import ./howler-rabbit.css;
 
 /**
  * Rabbit Lyrics main class
