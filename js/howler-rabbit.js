@@ -1,4 +1,4 @@
-  parseLyrics(_element) {
+  function parseLyrics(_element) {
     
     this.element = _element; 
     // Do not do anything if no lyrics element was found
