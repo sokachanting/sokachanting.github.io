@@ -1,11 +1,12 @@
   function parseLyrics(_element) {
     
+    console.log("Test");
     this.element = _element; 
     // Do not do anything if no lyrics element was found
     if (!this.element) {
       return this;
     }
-
+    console.log("Test 1111");
     let lines = this.element.textContent.trim().split("\n");
 
     this.element.textContent = "";
