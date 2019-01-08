@@ -6,6 +6,11 @@
 <script>
     var sound = new Howl({
       src: ['chanting.mp3']
+      sprite: {
+        DailyPractice: [0, 300000],
+        Chanting: [300000, 60000],
+        Finishing: [360000, 300000]
+      }        
     });  
 </script>
 </head>
@@ -14,9 +19,11 @@
 <button name=play value=play onclick="document.getElementById('audio-1').play()" > Play </button>
 --> 
     
-<button name=play value=play onclick="sound.play()" > Play </button>
+<button name=play value=play onclick="sound.play('DailyPractice')" > Play DailyPractice</button>
+<button name=play value=play onclick="sound.play('Chanting')" > Play Chanting</button>
+<button name=play value=play onclick="sound.play('Finishing')" > Play Finishing</button>   
 
-<audio id="audio-1" hidden>
+    <audio id="audio-1" hidden>
     <source src="chanting.mp3" type="audio/mpeg">
 </audio>
 
@@ -69,7 +76,7 @@
 <script> 
 parseLyrics(document.getElementById('rabbit-lyrics'));
     
-synchronize(5.0);
+synchronize(5.1);
 </script>
 </body>
 </html>
