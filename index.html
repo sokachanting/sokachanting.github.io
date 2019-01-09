@@ -6,6 +6,7 @@
 <script>
     var sound = new Howl({
       src: ['chanting.mp3'],
+      html5: true,
       sprite: {
         DailyPractice: [0, 298000],
         Chanting: [298000, 45000],
@@ -18,6 +19,7 @@
         var duration = document.getElementById('duration').value
         var newsound new Howl({
           src: ['chanting.mp3'],
+          html5: true,
           sprite: {
             Split: [start, duration]
           }        
