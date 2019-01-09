@@ -12,12 +12,33 @@
         Finishing: [343000, 86000]
       }        
     });  
+
+    function playchanting() {
+        var start = document.getElementById('start').value
+        var duration = document.getElementById('duration').value
+        var newsound new Howl({
+          src: ['chanting.mp3'],
+          sprite: {
+            Split: [start, duration]
+          }        
+        });
+        newsound.play('Split');
+    }
 </script>
 </head>
 <body>
 <!-- 
 <button name=play value=play onclick="document.getElementById('audio-1').play()" > Play </button>
 --> 
+   
+    <input name="start" type="text" id="start"> 0 </input>    
+    </br>
+    <input name="duration" type="text" id="duration"> 0 </input>  
+    <br>
+    <button name=play1 value=play1 onclick="playchanting()" > Play chanting</button>
+
+</br></br></br></br></br>
+
     
 <button name=play1 value=play1 onclick="sound.play('DailyPractice')" > Play DailyPractice</button>
 <button name=play2 value=play2 onclick="sound.play('Chanting')" > Play Chanting</button>
