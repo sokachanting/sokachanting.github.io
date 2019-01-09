@@ -9,22 +9,28 @@
       html5: true,
       sprite: {
         DailyPractice: [0, 298000],
-        Chanting: [298000, 45000],
-        Finishing: [343000, 86000]
+        Chanting: [298000, 10000],
+        Finishing: [339000, 86000]
       }        
     });  
 
     function playchanting() {
         var start = document.getElementById('start').value;
         var duration = document.getElementById('duration').value;
-        var newsound = new Howl({
-          src: ['chanting.mp3'],
-          html5: true,
-          sprite: {
+        sound.sprite = {
             Split: [start, duration]
-          }        
-        });
+        }
         newsound.play('Split');
+    }
+    
+    function playTime(){
+        var inTime = document.getElementById('playminutes').value;
+        var nTime = (inTime*60 - 386)/10;
+        //sound.play('DailyPractice');
+        for (int i=0; i< nTime; i++){
+            sound.play('Chanting');
+        }
+        //sound.play('Finishing');
     }
 </script>
 </head>
@@ -41,6 +47,10 @@
 
 </br></br></br></br></br>
 
+    <input name="playminutes" type="text" id="playminutes">10</input>  
+    <br>
+    <button name=playminutes value=playminutes onclick="playTime()" > Play by time</button>
+</br></br></br></br></br>
     
 <button name=play1 value=play1 onclick="sound.play('DailyPractice')" > Play DailyPractice</button>
 <button name=play2 value=play2 onclick="sound.play('Chanting')" > Play Chanting</button>
