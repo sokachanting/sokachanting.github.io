@@ -17,10 +17,13 @@
     function playchanting() {
         var start = document.getElementById('start').value;
         var duration = document.getElementById('duration').value;
+        alert ("start: "+ start+" duration:"+duration);
         sound.sprite = {
             Split: [start, duration]
         }
+        
         sound.play('Split');
+        alert ("played");
     }
     
     function playTime(){
