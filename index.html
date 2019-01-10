@@ -14,7 +14,28 @@
       }        
     });  
 
+    
+
+    var currentTime=0;
+    function myTimer() {
+      currentTime += 100;
+      synchronize(currentTime /1000.0);
+      if (currentTime == 100) {
+          sound.play('DailyPractice');
+      }
+      
+      if (currentTime < 300000) return;
+      if (currentTime > 300000 && currentTime < 600000){
+          if ((currentTime % 10000) == 0){
+              sound.play('Chanting');
+          }
+      }
+      if (currentTime == 600100){
+          sound.play('Finishing');
+      }
+    }
     function playchanting() {
+        
         var start = document.getElementById('start').value;
         var duration = document.getElementById('duration').value;
         alert ("start: "+ start+" duration:"+duration);
@@ -27,13 +48,15 @@
     }
     
     function playTime(){
-        var inTime = document.getElementById('playminutes').value;
-        var nTime = (inTime*60 - 386)/10;
-        sound.play('DailyPractice');
-        for (i=0; i< nTime; i++){
-            sound.play('Chanting');
-        }
-        sound.play('Finishing');
+        currentTime = 0;
+        var myVar = setInterval(myTimer, 100);
+        //var inTime = document.getElementById('playminutes').value;
+        //var nTime = (inTime*60 - 386)/10;
+        //sound.play('DailyPractice');
+        //for (i=0; i< nTime; i++){
+        //    sound.play('Chanting');
+        //}
+        //sound.play('Finishing');
     }
 </script>
 </head>
