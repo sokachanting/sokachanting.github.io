@@ -19,7 +19,9 @@
     var currentTime=0;
     function myTimer() {
       currentTime += 100;
+      
       synchronize(currentTime /1000.0);
+       document.getElementById('playtime').value=currentTime;
       if (currentTime == 100) {
           sound.play('DailyPractice');
       }
@@ -76,6 +78,8 @@
     <input name="playminutes" type="text" id="playminutes" value="10"></input>  
     <br>
     <button name=playminutes value=playminutes onclick="playTime()" > Play by time</button>
+    <br/>
+     <input name="playtime" type="text" id="playtime"></input>    
 </br></br></br></br></br>
     
 <button name=play1 value=play1 onclick="sound.play('DailyPractice')" > Play DailyPractice</button>
