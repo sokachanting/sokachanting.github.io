@@ -17,23 +17,24 @@
     
 
     var currentTime=0;
+    var soundid = null;
     function myTimer() {
       currentTime += 100;
       
       synchronize(currentTime /1000.0);
-      document.getElementById('playtime').value=sound.seek();
+      document.getElementById('playtime').value=sound.seek(soundid);
       if (currentTime == 100) {
-          sound.play('DailyPractice');
+         soundid=sound.play('DailyPractice');
       }
       
       if (currentTime < 300100) return;
       if (currentTime > 300100 && currentTime < 600100){
           if ((currentTime % 10000) == 100){
-              sound.play('Chanting');
+              soundid=sound.play('Chanting');
           }
       }
       if (currentTime == 600100){
-          sound.play('Finishing');
+          soundid=sound.play('Finishing');
       }
     }
     function playchanting() {
@@ -74,7 +75,7 @@
     <button name=play1 value=play1 onclick="playchanting()" > Play chanting</button>
 
 </br></br></br></br>
-version 1
+version 2
 </br>
 
     <input name="playminutes" type="text" id="playminutes" value="10"></input>  
