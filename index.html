@@ -21,14 +21,14 @@
       currentTime += 100;
       
       synchronize(currentTime /1000.0);
-       document.getElementById('playtime').value=currentTime;
+      document.getElementById('playtime').value=sound.seek();
       if (currentTime == 100) {
           sound.play('DailyPractice');
       }
       
-      if (currentTime < 300000) return;
-      if (currentTime > 300000 && currentTime < 600000){
-          if ((currentTime % 10000) == 0){
+      if (currentTime < 300100) return;
+      if (currentTime > 300100 && currentTime < 600100){
+          if ((currentTime % 10000) == 100){
               sound.play('Chanting');
           }
       }
