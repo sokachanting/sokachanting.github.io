@@ -29,11 +29,11 @@
     function playTime(){
         var inTime = document.getElementById('playminutes').value;
         var nTime = (inTime*60 - 386)/10;
-        //sound.play('DailyPractice');
+        sound.play('DailyPractice');
         for (i=0; i< nTime; i++){
             sound.play('Chanting');
         }
-        //sound.play('Finishing');
+        sound.play('Finishing');
     }
 </script>
 </head>
