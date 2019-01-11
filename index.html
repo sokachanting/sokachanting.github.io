@@ -31,7 +31,9 @@
         //alert('ended');  
         clearInterval(mytimer);
         var minutesRequired = document.getElementById('playminutes').value;
-        var targetMillionSecond = minutesRequired*60*1000 - spriteList.DailyPractice[1] - spriteList.Finishing[1]
+        console.log('minutesRequired :'+targetMillionSecond);
+        var targetMillionSecond = minutesRequired*60*1000 - spriteList.DailyPractice[1] - spriteList.Finishing[1];
+        console.log('targetMillionSecond :'+targetMillionSecond);
         if (currentTime >= 298000 && currentTime < targetMillionSecond){
            soundid=sound.play('Chanting');
         } else if (currentTime == targetMillionSecond){
@@ -113,7 +115,7 @@
     <button name=play1 value=play1 onclick="playchanting()" > Play chanting</button>
 
 </br></br></br></br>
-version 16
+version 17
 </br>
 
     <input name="playminutes" type="text" id="playminutes" value="10"></input>  
