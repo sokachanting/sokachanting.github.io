@@ -22,7 +22,7 @@
       },
         
     });  
-
+    var currentTime=0;
     var mytime = null;
     function myend() {
         alert('ended');   
@@ -32,6 +32,10 @@
         alert('started');
     };
     
+    function myTimer() {
+        document.getElementById('playtime').value=currentTime;
+        currentTime += 100;
+    }
       
 /*
     var currentTime=0;
@@ -95,7 +99,7 @@
     <button name=play1 value=play1 onclick="playchanting()" > Play chanting</button>
 
 </br></br></br></br>
-version 5
+version 6
 </br>
 
     <input name="playminutes" type="text" id="playminutes" value="10"></input>  
