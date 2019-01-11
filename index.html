@@ -29,9 +29,9 @@
     function myend() {
         //alert('ended');  
         clearInterval(mytimer);
-        if (currentTime >= 300000 && currentTime < 600000){
+        if (currentTime >= 298000 && currentTime < 600000){
            soundid=sound.play('Chanting');
-        } else if (currentTime == 600100){
+        } else if (currentTime == 600000){
           soundid=sound.play('Finishing');
         }      
     };
@@ -110,7 +110,7 @@
     <button name=play1 value=play1 onclick="playchanting()" > Play chanting</button>
 
 </br></br></br></br>
-version 14
+version 15
 </br>
 
     <input name="playminutes" type="text" id="playminutes" value="10"></input>  
