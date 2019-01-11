@@ -4,20 +4,22 @@
 <script src="./js/howler-rabbit.js" ></script>
 <link rel="stylesheet" href="./js/howler-rabbit.css">
 <script>
-    var sound = new Howl({
-      src: ['chanting.mp3'],
-      html5: true,
-      sprite: {
+    var spriteList = {
         DailyPractice: [0, 298000],
         Chanting: [298000, 10000],
         Finishing: [339000, 86000]
-      },
+    };
+    
+    var sound = new Howl({
+      src: ['chanting.mp3'],
+      html5: true,
+      sprite: spriteList,
       onend: function() {
-          console.log('Finished!');
+         console.log('Finished!');
          myend();
       },
       onplay: function() {
-          console.log('started!');
+         console.log('started!');
          myplay();
       },
         
@@ -101,7 +103,7 @@
     <button name=play1 value=play1 onclick="playchanting()" > Play chanting</button>
 
 </br></br></br></br>
-version 7
+version 8
 </br>
 
     <input name="playminutes" type="text" id="playminutes" value="10"></input>  
