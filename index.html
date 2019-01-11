@@ -26,12 +26,15 @@
     });  
     var currentTime=0;
     var mytimer = null;
+    
     function myend() {
         //alert('ended');  
         clearInterval(mytimer);
-        if (currentTime >= 298000 && currentTime < 600000){
+        var minutesRequired = document.getElementById('playminutes').value;
+        var targetMillionSecond = minutesRequired*60*1000 - spriteList.DailyPractice[1] - spriteList.Finishing[1]
+        if (currentTime >= 298000 && currentTime < targetMillionSecond){
            soundid=sound.play('Chanting');
-        } else if (currentTime == 600000){
+        } else if (currentTime == targetMillionSecond){
           soundid=sound.play('Finishing');
         }      
     };
@@ -110,7 +113,7 @@
     <button name=play1 value=play1 onclick="playchanting()" > Play chanting</button>
 
 </br></br></br></br>
-version 15
+version 16
 </br>
 
     <input name="playminutes" type="text" id="playminutes" value="10"></input>  
