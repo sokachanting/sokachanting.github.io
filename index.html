@@ -11,9 +11,25 @@
         DailyPractice: [0, 298000],
         Chanting: [298000, 10000],
         Finishing: [339000, 86000]
-      }        
+      },
+      onend: function() {
+         myend();
+      },
+      onplay: function() {
+         myplay();
+      },
+        
     });  
 
+    var mytime = null;
+    function myend() {
+        alert('ended');   
+    };
+    
+    function myplay() {
+        alert('started');
+    };
+    
       
 /*
     var currentTime=0;
@@ -77,7 +93,7 @@
     <button name=play1 value=play1 onclick="playchanting()" > Play chanting</button>
 
 </br></br></br></br>
-version 3
+version 4
 </br>
 
     <input name="playminutes" type="text" id="playminutes" value="10"></input>  
