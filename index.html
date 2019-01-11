@@ -13,9 +13,11 @@
         Finishing: [339000, 86000]
       },
       onend: function() {
+          console.log('Finished!');
          myend();
       },
       onplay: function() {
+          console.log('started!');
          myplay();
       },
         
@@ -93,7 +95,7 @@
     <button name=play1 value=play1 onclick="playchanting()" > Play chanting</button>
 
 </br></br></br></br>
-version 4
+version 5
 </br>
 
     <input name="playminutes" type="text" id="playminutes" value="10"></input>  
