@@ -98,12 +98,15 @@
         alert ("played");
     }
     function insertTime(){
-        var sec = currentTime /1000;
-        var min = sec / 60;
-        var minisec = (currentTime - sec ) / 1000.0
+        var sec = Math.floor(currentTime /1000);
+        var min = Math.floor(sec / 60);
+        var minisec = ((currentTime - sec ) / 1000.0).toPrecision(2)
+        sec = Math.floor(currentTime /1000) - min*60;        
         sec = sec + minisec;
-        parsedTime= (min>=10?"":"0")+min+":"+(sec>=10?"":"0")+sec
-        document.getElementById('timeDiv').innerHtml = document.getElementById('timeDiv').innerHtml +"<br/>" + parsedTime
+        parsedTime= (min>=10?"":"0")+min+":"+(sec>=10?"":"0")+sec;
+        let lineElement = document.createElement("div");
+        lineElement.innerHTML = parsedTime;
+        document.getElementById('timeDiv').element.appendChild(lineElement);
     }
     function playTime(){
         currentTime = 0;
@@ -132,7 +135,7 @@
     <button name=play1 value=play1 onclick="playchanting()" > Play chanting</button>
 
 </br></br></br></br>
-version 23
+version 24
 </br>
 
     <input name="playminutes" type="text" id="playminutes" value="10"></input>  
