@@ -106,7 +106,7 @@
         parsedTime= (min>=10?"":"0")+min+":"+(sec>=10?"":"0")+sec;
         let lineElement = document.createElement("div");
         lineElement.innerHTML = parsedTime;
-        document.getElementById('timeDiv').element.appendChild(lineElement);
+        document.getElementById('timeDiv').appendChild(lineElement);
     }
     function playTime(){
         currentTime = 0;
@@ -135,7 +135,7 @@
     <button name=play1 value=play1 onclick="playchanting()" > Play chanting</button>
 
 </br></br></br></br>
-version 24
+version 25
 </br>
 
     <input name="playminutes" type="text" id="playminutes" value="10"></input>  
