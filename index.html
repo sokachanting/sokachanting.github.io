@@ -100,9 +100,9 @@
     function insertTime(){
         var sec = Math.floor(currentTime /1000);
         var min = Math.floor(sec / 60);
-        var minisec = ((currentTime - sec*1000 ) / 1000.0).toPrecision(2)
+        var minisec = ((currentTime - sec*1000 ) / 1000.0).toFixed(2)
         sec = Math.floor(currentTime /1000) - min*60;        
-        sec = (parseFloat(sec) + parseFloat(minisec)).toPrecision(2);
+        sec = (parseFloat(sec) + parseFloat(minisec)).toFixed(2);
         parsedTime= (min>=10?"":"0")+min+":"+(sec>=10?"":"0")+sec;
         let lineElement = document.createElement("div");
         lineElement.innerHTML = parsedTime;
