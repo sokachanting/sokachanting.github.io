@@ -10,6 +10,17 @@
         Finishing: [339000, 86000]
     };
     
+    var sound2 = new Howl({
+      src: ['chanting.mp3'],
+      html5: true      
+    });  
+    
+    function playspeed(){
+        myspeed=document.getElementById('myrate').value;
+        sound2.rate(myspeed);
+        sound2.play();
+    }
+    
     var sound = new Howl({
       src: ['chanting.mp3'],
       html5: true,
@@ -127,9 +138,12 @@ version 21
 <button name=play2 value=play2 onclick="sound.play('Chanting')" > Play Chanting</button>
 <button name=play3 value=play3 onclick="sound.play('Finishing')" > Play Finishing</button>   
 
-    <audio id="audio-1" hidden>
-    <source src="chanting.mp3" type="audio/mpeg">
-</audio>
+ </br></br></br></br></br>
+
+  <input name="myrate" type="text" id="myrate" value="0.5"></input>  
+    <br>
+    <button name=playmyrate value=playmyrate onclick="playspeed()" > Play by speed</button>
+    <br/>
 
     
 <!-- <div class="lyrics-1"> -->
