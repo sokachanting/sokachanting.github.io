@@ -19,6 +19,7 @@
         myspeed=document.getElementById('myrate').value;
         sound2.rate(myspeed);
         sound2.play();
+        document.getElementById('playtime').value=sound2.duration();
     }
     
     var sound = new Howl({
@@ -124,7 +125,7 @@
     <button name=play1 value=play1 onclick="playchanting()" > Play chanting</button>
 
 </br></br></br></br>
-version 21
+version 22
 </br>
 
     <input name="playminutes" type="text" id="playminutes" value="10"></input>  
