@@ -100,7 +100,7 @@
     function insertTime(){
         var sec = Math.floor(currentTime /1000);
         var min = Math.floor(sec / 60);
-        var minisec = ((currentTime - sec ) / 1000.0).toPrecision(2)
+        var minisec = ((currentTime - sec*1000 ) / 1000.0).toPrecision(2)
         sec = Math.floor(currentTime /1000) - min*60;        
         sec = sec + minisec;
         parsedTime= (min>=10?"":"0")+min+":"+(sec>=10?"":"0")+sec;
@@ -135,7 +135,7 @@
     <button name=play1 value=play1 onclick="playchanting()" > Play chanting</button>
 
 </br></br></br></br>
-version 25
+version 26
 </br>
 
     <input name="playminutes" type="text" id="playminutes" value="10"></input>  
@@ -156,9 +156,11 @@ version 25
     <br>
     <button name=playmyrate value=playmyrate onclick="playspeed()" > Play by speed</button>
     <br/>
-
+ </br></br></br></br></br>
 <div id="timeDiv">
 </div>    
+
+ </br></br></br></br></br>
 <!-- <div class="lyrics-1"> -->
     
 <div id="rabbit-lyrics" class="rabbit-lyrics" data-audio="#audio-1">
